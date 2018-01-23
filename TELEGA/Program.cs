@@ -23,7 +23,7 @@ namespace Telegram.Bot.Examples.Echo
 {
     public static class Program
     {
-        private static readonly TelegramBotClient Bot = new TelegramBotClient("398521792:AAHvi6NLvUUOWtLkUmAR8hrgc2-_4590zuY");
+        private static readonly TelegramBotClient Bot = new TelegramBotClient("513572219:AAFnhp76wp-AMslfGNF7RVZcqmm3UU32kvs");
 
         public static void Main(string[] args)
         {
@@ -39,7 +39,8 @@ namespace Telegram.Bot.Examples.Echo
             Console.Title = me.Username;
 
             Bot.StartReceiving();
-            Console.WriteLine($"Start listening for @{me.Username}");
+          //  Console.WriteLine($"Start listening for @{me.Username}");
+            Console.WriteLine(string.Format("Start listening for {0}",me.Username));
             Console.ReadLine();
             Bot.StopReceiving();
         }
@@ -73,9 +74,9 @@ namespace Telegram.Bot.Examples.Echo
 
                 string get =
                     String.Format(
-                        "https://api.qrserver.com/v1/read-qr-code/?fileurl=https://api.telegram.org/file/bot398521792:AAHvi6NLvUUOWtLkUmAR8hrgc2-_4590zuY/{0}",
+                        "https://api.qrserver.com/v1/read-qr-code/?fileurl=https://api.telegram.org/file/bot513572219:AAFnhp76wp-AMslfGNF7RVZcqmm3UU32kvs/{0}",
                         message.Photo[num].FilePath);
-
+            //    Thread.Sleep(500);
                 // message.Photo.Count()-1 => the biggest resolution
                 string data = GET(get,"");
 
@@ -113,7 +114,7 @@ namespace Telegram.Bot.Examples.Echo
 
                     string fp = match2.Groups[1].Value;
 
-                    Checking checking = new Checking("+79046362680", "644137");
+                    Checking checking = new Checking("+79817889931", "405381");
 
                     CheckInfo checkInfo = new CheckInfo
                     {
@@ -127,7 +128,8 @@ namespace Telegram.Bot.Examples.Echo
                     StringBuilder str = new StringBuilder("");
                     foreach (var item in check.Document.Receipt.Items)
                     {
-                        str.AppendLine($"{item.Name} - {item.Sum}");
+                       // str.AppendLine($"{item.Name} - {item.Sum}");
+                        str.Append(string.Format("\n{0} - {1}",item.Name,item.Sum));
                     }
 
 
@@ -254,12 +256,14 @@ namespace Telegram.Bot.Examples.Echo
         {
             await Bot.AnswerCallbackQueryAsync(
                 callbackQueryEventArgs.CallbackQuery.Id,
-                $"Received {callbackQueryEventArgs.CallbackQuery.Data}");
+               // $"Received {callbackQueryEventArgs.CallbackQuery.Data}");
+                string.Format("Received {0}",callbackQueryEventArgs.CallbackQuery.Data));
         }
 
         private static async void BotOnInlineQueryReceived(object sender, InlineQueryEventArgs inlineQueryEventArgs)
         {
-            Console.WriteLine($"Received inline query from: {inlineQueryEventArgs.InlineQuery.From.Id}");
+            //Console.WriteLine($"Received inline query from: {inlineQueryEventArgs.InlineQuery.From.Id}");
+            Console.WriteLine("Received inline query from:{0}",inlineQueryEventArgs.InlineQuery.From.Id);
 
             InlineQueryResult[] results = {
                 new InlineQueryResultLocation
@@ -298,7 +302,8 @@ namespace Telegram.Bot.Examples.Echo
 
         private static void BotOnChosenInlineResultReceived(object sender, ChosenInlineResultEventArgs chosenInlineResultEventArgs)
         {
-            Console.WriteLine($"Received inline result: {chosenInlineResultEventArgs.ChosenInlineResult.ResultId}");
+            //Console.WriteLine($"Received inline result: {chosenInlineResultEventArgs.ChosenInlineResult.ResultId}");
+            Console.WriteLine("Received inline result: {0}", chosenInlineResultEventArgs.ChosenInlineResult.ResultId);
         }
 
         private static void BotOnReceiveError(object sender, ReceiveErrorEventArgs receiveErrorEventArgs)

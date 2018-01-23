@@ -7,12 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TELEGA", "TELEGA\TELEGA.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F14D74E8-74E8-4A93-B853-6E978C6D97E0}"
 	ProjectSection(SolutionItems) = preProject
-		TELEGA\bin\Debug\FSNCheck.dll = TELEGA\bin\Debug\FSNCheck.dll
 		TELEGA\bin\Debug\Newtonsoft.Json.dll = TELEGA\bin\Debug\Newtonsoft.Json.dll
 		TELEGA\bin\Debug\Newtonsoft.Json.xml = TELEGA\bin\Debug\Newtonsoft.Json.xml
 		TELEGA\bin\Debug\Telegram.Bot.dll = TELEGA\bin\Debug\Telegram.Bot.dll
 		TELEGA\bin\Debug\Telegram.Bot.xml = TELEGA\bin\Debug\Telegram.Bot.xml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSNCheck", "..\..\FSNReq\FSNReq\FSNCheck\FSNCheck.csproj", "{B418E837-44E6-4AA5-9AA1-BAA8FDDAD7F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,11 +25,15 @@ Global
 		{FE3A0ECB-52ED-4E63-AFA6-16A6BAAE931F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE3A0ECB-52ED-4E63-AFA6-16A6BAAE931F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE3A0ECB-52ED-4E63-AFA6-16A6BAAE931F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B418E837-44E6-4AA5-9AA1-BAA8FDDAD7F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B418E837-44E6-4AA5-9AA1-BAA8FDDAD7F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B418E837-44E6-4AA5-9AA1-BAA8FDDAD7F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B418E837-44E6-4AA5-9AA1-BAA8FDDAD7F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DCB455AF-C82E-4189-80A4-D75D8C463E7F}
+		SolutionGuid = {DE7C110B-A5E7-4506-AC55-8699DAF85D66}
 	EndGlobalSection
 EndGlobal
